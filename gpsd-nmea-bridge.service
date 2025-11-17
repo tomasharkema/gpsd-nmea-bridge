@@ -1,0 +1,13 @@
+[Unit]
+Description=gpsd-nmea-bridge
+Requires=network.target
+After=multi-user.target
+
+[Service]
+Type=notify
+ExecStart=/tmp/gpsd-nmea-bridge
+Restart=always
+NotifyAccess=all
+
+[Install]
+WantedBy=multi-user.target
