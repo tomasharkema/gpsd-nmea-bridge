@@ -5,7 +5,7 @@ After=multi-user.target avahi-daemon.service
 
 [Service]
 Type=notify
-ExecStart=/tmp/gpsd-nmea-bridge
+ExecStart=/usr/local/bin/gpsd-nmea-bridge
 Restart=always
 NotifyAccess=all
 
