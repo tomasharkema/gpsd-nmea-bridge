@@ -65,7 +65,8 @@ func advertiseAvahi() {
 
 	err = eg.AddService(
 		avahi.InterfaceUnspec, avahi.ProtoUnspec, 0, hostname,
-		"_nmea-0183._tcp", "local", fqdn, 10110, nil,
+		"_nmea-0183._tcp", "local", fqdn, 10110,
+		[][]byte{[]byte("accuracy=exact")},
 	)
 	if err != nil {
 		log.Fatalf("AddService() failed: %v", errors.Wrap(err, ""))
